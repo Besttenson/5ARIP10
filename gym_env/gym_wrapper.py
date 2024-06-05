@@ -26,7 +26,7 @@ class WaymaxWrapper(gym.Env):
         self.obs_with_agent_id = obs_with_agent_id
         self.scenario = scenario
         self.env_state = self._env.reset(scenario)
-        self.scenario_total_steps = range(self.env_state.remaining_timesteps)
+        self.scenario_total_steps = self.env_state.remaining_timesteps
         self._travelled_steps = 0
         self.stop_step = 0
         self.dynamics_model = dynamics.InvertibleBicycleModel(
@@ -156,7 +156,11 @@ class WaymaxWrapper(gym.Env):
             extra_reward = reward_calculation(current_state, self.ego_index, action, self._travelled_steps, self.stop_step, 1, 20, self._env)
             reward = waymax_reward + extra_reward
         
-        dones = self._travelled_steps == self.scenario_total_steps
+        if self._travelled_steps == self.scenario_total_steps:
+            dones = True
+            self._travelled_steps = 0
+        else:
+            dones = False
         infos = {}
 
         self._travelled_steps += 1
