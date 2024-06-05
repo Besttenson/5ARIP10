@@ -29,3 +29,4 @@ class Config:
     learning_rate: float = 0.0003                # Learning rate
     batch_size: int = 32                         # Batch size
     n_epochs: int = 10                           # Number of epochs
+

@@ -22,16 +22,16 @@ def train(config: Config):
     obs_config = dataclasses.replace(
         _config.ObservationConfig(),
         coordinate_frame=_config.CoordinateFrame.OBJECT,
-        roadgraph_top_k=Config.roadgraph_top_k,
+        roadgraph_top_k=config.roadgraph_top_k,
     )
 
     # Create env config
     env_config = dataclasses.replace(
         _config.EnvironmentConfig(),
-        max_num_objects=Config.max_num_objects,
+        max_num_objects=config.max_num_objects,
         observation=obs_config,
         rewards=_config.LinearCombinationRewardConfig(
-            Config.waymax_reward_weights
+            config.waymax_reward_weights
         ),
         # Controll all valid objects in the scene.
         controlled_object=_config.ObjectType.VALID,
