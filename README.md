@@ -10,24 +10,23 @@ This repository contains code for motion planning using the Waymax simulator. Th
 
 ## Usage
 
-
 1. Clone the repository:
 ```bash
 git clone https://github.com/Besttenson/5AEIP0.git
 cd waymax_motion_planning
-
+```
 2. Install requirements
 ```bash
 pip install -r requirements.txt
-
+```
 3. If you want to train with local filtered scenario, download the .zip file from (link). Unzip it and put the folder under the root repository.
 
 4. To train the model, run training.py
 ```bash
 python training.py
-
+```
 5. To visualize the mode, run visualization.py
 ```bash
 python visualization.py
-
+```
 6. Config.py shows all hyperparameters that can be tuned
