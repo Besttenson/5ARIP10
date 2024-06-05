@@ -12,8 +12,8 @@ This repository contains code for motion planning using the Waymax simulator. Th
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/Besttenson/5AEIP0.git
-cd 5AEIP0
+git clone https://github.com/Besttenson/5ARIP10.git
+cd 5ARIP10
 ```
 2. Install requirements
 ```bash
