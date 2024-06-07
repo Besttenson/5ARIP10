@@ -4,7 +4,6 @@
 /waymo_open_dataset
 try*
 __pycache__
-/results
 /figures
 /fig_graduation
 /notes
