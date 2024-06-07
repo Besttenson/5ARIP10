@@ -17,7 +17,7 @@ def get_scenario(config: Config):
         tagged_file_names, host_actors = categorized_scenarios()
         scenarios, _ = extra_filtering(tagged_file_names, host_actors, data_iter)
     else:
-        config = dataclasses.replace(_config.WOD_1_1_0_TRAINING, max_num_objects=4)
+        config = dataclasses.replace(_config.WOD_1_1_0_TRAINING, max_num_objects=config.max_num_objects)
         scenarios = dataloader.simulator_state_generator(config=config)
 
     return scenarios
