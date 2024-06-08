@@ -19,9 +19,10 @@ cd 5ARIP10
 ```bash
 pip install -r requirements.txt
 ```
-3. If you want to train with local filtered scenario, download the .zip file from (link). Unzip it and put the folder under the root repository.
+3. If you want to train with local filtered scenario, refer to waymo_motion_scenario_mining folder to generate your own scenarios.
+   Otherwise, you could use the scenarios in Waymo Open Dataset for training.
 
-4. To train the model, run training.py
+5. To train the model, run training.py
 ```bash
 python training.py
 ```
