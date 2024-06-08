@@ -1,7 +1,7 @@
 # Scenario filtering README 
 
 ## File structure 
-The following file structure shows the location of the relavant files. The repository includes much more files, but for the scenario extraction you will not need them. 
+The following file structure shows the location of the relevant files. The repository includes much more files, but for the scenario extraction are not needed directly. 
 
 ```
 Scenario filtering repository
@@ -40,7 +40,7 @@ Scenario filtering repository
 
 ## Running tagging and categorization code
 
-1. Install the required scenario mining packages in a virtual inverment from the [./waymo_motion_scenario_mining/requirements.txt](./waymo_motion_scenario_mining/requirements.txt) file.
+1. Install the required scenario mining packages in a virtual environment from the [./waymo_motion_scenario_mining/requirements.txt](./waymo_motion_scenario_mining/requirements.txt) file.
 
 2. To generate the tags run the following command
 
@@ -82,13 +82,13 @@ To improve or finetune the results of the tagging and categorization it is possi
 
 1. The extra filtering code uses functions from the waymax repository, therefore the required Waymax packages need to be installed from [./waymax/docs/requirements.txt](./waymax/docs/requirements.txt)
 
-2. When WODM data is installed locally but does not include the whole dataset, it is required to run [./waymax/file_renamer.py](./waymax/file_renamer.py) to change the ending of each TFRecord file name. It is required to change the directory variable to the location of the WODM files. 
+2. When WOMD data is installed locally but does not include the whole dataset, it is required to run [./waymax/file_renamer.py](./waymax/file_renamer.py) to change the ending of each TFRecord file name. It is required to change the directory variable to the location of the WOMD files. 
 
 3. The extra filtering code can be run and visualized in the [./waymax/scenario_extraction.ipynb](./waymax/scenario_extraction.ipynb) notebook.
 
     The extra filtering code can also be run from the [./waymax/scenario_filtering.py](./waymax/scenario_filtering.py) file for use on the HPC. 
 
-    Note: it is required to add the location of the WODM data and categorization files into both files befor use. Furthermore, at the end of the WODM location it is required to include training_tfexample.tfrecord@## where the ## need to be replaced with the number of TFRecord files in the data folder.
+    Note: it is required to add the location of the WOMD data and categorization files into both files befor use. Furthermore, at the end of the WOMD location it is required to include training_tfexample.tfrecord@## where the ## need to be replaced with the number of TFRecord files in the data folder.
 
 ## Chaning extra filtering parameters
 
