@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # Scenario filtering README 
 
 ## File structure 
