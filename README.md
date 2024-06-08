@@ -14,10 +14,10 @@ Our approach integrates a Deep Reinforcement Learning (DRL) based method to crea
 - **Scenario Extraction**: We utilize scenarios extracted from the Waymo Open Motion Dataset (WOMD) to test and evaluate our motion planning algorithm, ensuring it performs well in diverse and realistic situations. The method to realize that can be found in [this repository](https://github.com/Besttenson/5ARIP10/tree/main/waymo_motion_scenario_mining).
 
 ## Team members:
-Y. Teng 1825933
-R. van Doorn 1484982
-R. Su 1979019
-V. Almeida 2050455
+- Y. Teng 1825933
+- R. van Doorn 1484982
+- R. Su 1979019
+- V. Almeida 2050455
 
 ## Supervisior/project owner:
 A. Katriniok
