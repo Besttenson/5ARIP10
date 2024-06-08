@@ -1,5 +1,7 @@
 # models
 model/
+SCLaneChange_new/
+tf_dataset/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
