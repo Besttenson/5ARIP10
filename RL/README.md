@@ -19,7 +19,7 @@ cd 5ARIP10/RL
 ```bash
 pip install -r requirements.txt
 ```
-3. If you want to train with local filtered scenario, refer to waymo_motion_scenario_mining folder to generate your own scenarios.
+3. If you want to train with local filtered scenario, refer to [Scenario Extraction folder](https://github.com/Besttenson/5ARIP10/tree/main/waymo_motion_scenario_mining) to generate your own scenarios.
    Otherwise, you could use the scenarios in Waymo Open Dataset for training.
 
 5. To train the model, run training.py
