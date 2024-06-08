@@ -17,7 +17,7 @@ from waymax import visualization
 
 # Define a data config with locations of WOMD files
 DATA_LOCAL_01 = DatasetConfig(
-    path= ''# LOCATION OF DIRECTORY CONTAINING WOMD TFRECORD FILES + 'training_tfexample.tfrecord@XX'
+    path= '',# LOCATION OF DIRECTORY CONTAINING WOMD TFRECORD FILES + 'training_tfexample.tfrecord@XX'
     max_num_rg_points=20000,
     data_format=DataFormat.TFRECORD,
 )
