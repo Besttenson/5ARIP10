@@ -11,7 +11,7 @@ Our approach integrates a Deep Reinforcement Learning (DRL) based method to crea
 ## Key Features
 
 - **RL Repository**: Our RL algorithms can be found in [this repository](https://github.com/Besttenson/5ARIP10/tree/main/RL). This includes the implementation and training details for creating RL models.
-- **Scenario Extraction**: We utilize scenarios extracted from the Waymo Open Motion Dataset (WOMD) to test and evaluate our motion planning algorithm, ensuring it performs well in diverse and realistic situations. The method to realize that can be found in [this repository](https://github.com/Besttenson/5ARIP10/tree/main/waymo_motion_scenario_mining).
+- **Scenario Extraction**: We utilize scenarios extracted from the Waymo Open Motion Dataset (WOMD) to test and evaluate our motion planning algorithm, ensuring it performs well in diverse and realistic situations. The method to realize that can be found in [this repository](https://github.com/Besttenson/5ARIP10/tree/main/Scenario_extraction).
 
 ## Team members:
 - Y. Teng 1825933
