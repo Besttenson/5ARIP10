@@ -96,7 +96,7 @@ To improve or finetune the results of the tagging and categorization it is possi
 
 3. The extra filtering code can be run and visualized in the [scenario_extraction.ipynb](./waymax/scenario_extraction.ipynb) notebook.
 
-    The extra filtering code can also be run from the [scenario_filtering.py](./waymax/scenario_filtering.py) file for use on the HPC. This file contains all the functions needed to obtain the filtered scenarios and can thus be incorperated in training files in the reinforcement learning section.
+    The extra filtering code can also be run from the [scenario_filtering.py](./waymax/scenario_filtering.py) file for use on the HPC. This file contains all the functions needed to obtain the filtered scenarios and can thus be incorperated in [training files](https://github.com/Besttenson/5ARIP10/blob/main/RL/scenario_extraction.py) in the reinforcement learning section.
 
     Note: it is required to add the location of the WOMD data and categorization files into both files befor use. Furthermore, at the end of the WOMD location it is required to include training_tfexample.tfrecord@## where the ## need to be replaced with the number of TFRecord files in the data folder.
 
