@@ -152,13 +152,3 @@ def extra_filtering(tagged_file_names, host_actors, data_iter):
         if len(LaneChangeData) == len(tagged_file_names):
             break
     return LaneChangeData, LaneChangeID
-
-if __name__ == "__main__":
-    start_time = time.time()
-    data_iter = decode_bytes(dataloader.get_data_generator(data_config, _preprocess, _postprocess))
-    tagged_file_names, host_actors = categorized_scenarios()
-    LaneChangeData, LaneChangeID = extra_filtering(tagged_file_names, host_actors, data_iter)
-    end_time = time.time()
-    elapsed_time = end_time - start_time
-    print("Time to run scenario filtering:", elapsed_time, "[seconds]")
-    print("Correct lane change IDs:", LaneChangeID)

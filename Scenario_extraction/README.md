@@ -40,7 +40,11 @@ Scenario filtering repository
 
 ## Running tagging and categorization code
 
-1. Install the required scenario mining packages in a virtual environment from the [./waymo_motion_scenario_mining/requirements.txt](./waymo_motion_scenario_mining/requirements.txt) file.
+1. Install the requirements using
+    ```shell
+    pip install -r .\waymo_motion_scenario_mining\requirements.txt
+    ```
+
 
 2. To generate the tags run the following command
 
@@ -48,7 +52,7 @@ Scenario filtering repository
     python .\waymo_motion_scenario_mining\utils\runner.py --data_dir your_data_path
     ```
 
-    This will automatically create a folder which is named by the time you run the code in [./waymo_motion_scenario_mining/results/](./waymo_motion_scenario_mining/results/) where the tags will be stored. An example of this folder and a few tags can be seen in [./waymo_motion_scenario_mining/results/2024-03-27-15_12/](./waymo_motion_scenario_mining/results/2024-03-27-15_12/).
+    This will automatically create a folder which is named by the time you run the code in [results](./waymo_motion_scenario_mining/results/) where the tags will be stored. An example of this folder and a few tags can be seen in [2024-03-27-15_12](./waymo_motion_scenario_mining/results/2024-03-27-15_12/).
 
     On the HPC the command can be changed to
 
@@ -66,33 +70,39 @@ Scenario filtering repository
    # MM-DD-HH_MM
    ```
 
-   This will automatically create folders named by the names of your categories in [./waymo_motion_scenario_mining/results/](./waymo_motion_scenario_mining/results/) where the categorization files will be stored. An axample of this folder and a few tags can be seen in [./waymo_motion_scenario_mining/results/2024-03-27-15_12/SC10/](./waymo_motion_scenario_mining/results/2024-03-27-15_12/SC10/).
+   This will automatically create folders named by the names of your categories in [results](./waymo_motion_scenario_mining/results/) where the categorization files will be stored. An axample of this folder and a few tags can be seen in [SC10](./waymo_motion_scenario_mining/results/2024-03-27-15_12/SC10/).
 
 ## Changing tagging and filtering parameters
 
 To improve or finetune the results of the tagging and categorization it is possible to tune tag parameters and update scenario categories in the following places.
 
-1. In [./waymo_motion_scenario_mining/utils/parameters/tag_parameters.py/](./waymo_motion_scenario_mining/utils/parameters/tag_parameters.py/) tag parameters can be changed to influence when specific tags are assigned to a scenario. For example, the minimum required yaw_rate for a turn can be changed. 
+1. In [tag_parameters.py](./waymo_motion_scenario_mining/utils/parameters/tag_parameters.py/) tag parameters can be changed to influence when specific tags are assigned to a scenario. For example, the minimum required yaw_rate for a turn can be changed. 
 
-2. In [./waymo_motion_scenario_mining/utils/parameters/scenario_categories.py/](./waymo_motion_scenario_mining/utils/parameters/scenario_categories.py/) custom scenario categories can be made. This gives you the chance to design a specific combination of tags that is best for your usecase.
+2. In [scenario_categories.py](./waymo_motion_scenario_mining/utils/parameters/scenario_categories.py/) custom scenario categories can be made. This gives you the chance to design a specific combination of tags that is best for your usecase.
 
-3. In [./waymo_motion_scenario_mining/utils/tags_generator.py/](./waymo_motion_scenario_mining/utils/tags_generator.py/) the tags are added to a scenario. Custom tags to better narrow down your scenario can be added here.
+3. In [tags_generator.py](./waymo_motion_scenario_mining/utils/tags_generator.py/) the tags are added to a scenario. Custom tags to better narrow down your scenario can be added here.
 
 ## Running the extra filtering code
 
-1. The extra filtering code uses functions from the waymax repository, therefore the required Waymax packages need to be installed from [./waymax/docs/requirements.txt](./waymax/docs/requirements.txt)
+1. Install the waymax requirements using
+    ```shell
+    pip install -r .\waymax\docs\requirements.txt
+    ```
 
-2. When WOMD data is installed locally but does not include the whole dataset, it is required to run [./waymax/file_renamer.py](./waymax/file_renamer.py) to change the ending of each TFRecord file name. It is required to change the directory variable to the location of the WOMD files. 
+2. When WOMD data is installed locally but does not include the whole dataset, it is required to run [file_renamer.py](./waymax/file_renamer.py) to change the ending of each TFRecord file name. It is required to change the directory variable to the location of the WOMD files. File renamer can be run using 
+    ```shell
+    python .\waymax\file_renamer.py
+    ```
 
-3. The extra filtering code can be run and visualized in the [./waymax/scenario_extraction.ipynb](./waymax/scenario_extraction.ipynb) notebook.
+3. The extra filtering code can be run and visualized in the [scenario_extraction.ipynb](./waymax/scenario_extraction.ipynb) notebook.
 
-    The extra filtering code can also be run from the [./waymax/scenario_filtering.py](./waymax/scenario_filtering.py) file for use on the HPC. 
+    The extra filtering code can also be run from the [scenario_filtering.py](./waymax/scenario_filtering.py) file for use on the HPC. This file contains all the functions needed to obtain the filtered scenarios and can thus be incorperated in training files in the reinforcement learning section.
 
     Note: it is required to add the location of the WOMD data and categorization files into both files befor use. Furthermore, at the end of the WOMD location it is required to include training_tfexample.tfrecord@## where the ## need to be replaced with the number of TFRecord files in the data folder.
 
 ## Chaning extra filtering parameters
 
-The extra filtering parameters can be changed in the [./waymax/scenario_extraction.ipynb](./waymax/scenario_extraction.ipynb) or [./waymax/scenario_filtering.py](./waymax/scenario_filtering.py) files themselves.
+The extra filtering parameters can be changed in the [scenario_extraction.ipynb](./waymax/scenario_extraction.ipynb) or [scenario_filtering.py](./waymax/scenario_filtering.py) files themselves.
 
 ## Configure access to Waymo Open Motion Dataset
 
@@ -118,7 +128,7 @@ Please reference
 [TF Datasets](https://www.tensorflow.org/datasets/gcs#authentication) for
 alternative methods to authentication.
 
-When using the WOMD dicrectly from the cloud it is required to use WOD_1_0_0_TRAINING, WOD_1_1_0_TRAINING or one of the other configs as the data_config variable instead of the DATA_LOCAL_01 config. These data configs can be found in [./waymax/waymax/config.py](./waymax/waymax/config.py).
+When using the WOMD dicrectly from the cloud it is required to use WOD_1_0_0_TRAINING, WOD_1_1_0_TRAINING or one of the other configs as the data_config variable instead of the DATA_LOCAL_01 config. These data configs can be found in [config.py](./waymax/waymax/config.py).
 
 ## Getting familiar with waymax
-A good way of getting familiar with waymax itself is by looking at the example notebooks located at [./waymax/docs/notebooks](./waymax/docs/notebooks/)
+A good way of getting familiar with waymax itself is by looking at the example notebooks located at [demo notebooks](./waymax/docs/notebooks/)
